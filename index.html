@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <p>Click "Try it" to display the first array element, after a string split.</p>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <p id="input">@cninja, has just advanced to level 15! 2.5 Participation Points multiplied by level attained.</p>
+
+    <p>Output:</p>
+
+    <p id="demo"></p>
+
+    <!--Format:
+    **Discord Participation | Level 28 | Imorik** has been posted! Navigate to <https://www.handsoffateaoc.com/guild-member-participation/> and claim participation within **48 hours** when the event will close.
+    -->
+
+    <script>
+function myFunction() {
+  var str = document.getElementById("input").innerHTML;
+  var usr = str.split(",")[0];
+  var lvl = str.split("!")[0].split("level ")[1];
+  document.getElementById("demo").innerHTML = "**Discord Participation | Level "+ lvl +" | " + usr +"** has been posted! Navigate to <https://www.handsoffateaoc.com/guild-member-participation/> and claim participation within **48 hours** when the event will close.";
+
+
+}
+    </script>
+
+</body>
+</html>
