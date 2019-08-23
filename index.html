@@ -1,28 +1,54 @@
 <!DOCTYPE html>
+<br>
 <html>
 <body>
 
-    <p>Click "Try it" to display the first array element, after a string split.</p>
+    <input type="text" id="input" oninput="myFunction()">
 
-    <button onclick="myFunction()">Try it</button>
-
-    <p id="input">@cninja, has just advanced to level 15! 2.5 Participation Points multiplied by level attained.</p>
-
-    <p>Output:</p>
-
-    <p id="demo"></p>
-
-    <!--Format:
-    **Discord Participation | Level 28 | Imorik** has been posted! Navigate to <https://www.handsoffateaoc.com/guild-member-participation/> and claim participation within **48 hours** when the event will close.
+    <!--Format Examples:
+    Input:
+      @cninja, has just advanced to level 15! 2.5 Participation Points multiplied by level attained.
+    Output:
+      **Discord Participation | Level 28 | Imorik** has been posted! Navigate to <https://www.handsoffateaoc.com/guild-member-participation/> and claim participation within **48 hours** when the event will close.
     -->
+
+    <p>
+        Instructions:<br>
+        <br>
+        Note: Make sure that the user has the "Hands of Fate" tag before awarding points. No action needs to be taken if they do not have this tag.<br>
+        <br>
+        1) Copy the message in #participation-logs and paste above.<br>
+        2) Go to <a href="https://www.handsoffateaoc.com/guild/">https://www.handsoffateaoc.com/guild/</a> and click "Create Event"<br>
+        3) Enter the event name as given bellow (eg: "Discord Participation | Level X | Username").<br>
+        4) Select the proper Event Date and Event Time (todays date)<br>
+        5) Select Discord Participation if not already selected under Event Type.<br>
+        6) Enter the proper amount of participation by selecting Other and typing in the amount given bellow into the field. It is Level multipled by 2.5.<br>
+        7) Click Submit<br>
+        8) Copy the message bellow and send it as a direct message to the intended recipient.<br>
+        9) Use a Discord reaction to show that the participation has been actioned.<br>
+        <br>
+        DONE.
+    <p>
+
+    <p id="event"></p>
+
+
+    <p id="dkp"></p>
+
+    <p id="send"></p>
 
     <script>
 function myFunction() {
-  var str = document.getElementById("input").innerHTML;
-  var usr = str.split(",")[0];
+  var str = document.getElementById("input").value;
+  var usr = str.split(",")[0].slice(1);
   var lvl = str.split("!")[0].split("level ")[1];
-  document.getElementById("demo").innerHTML = "**Discord Participation | Level "+ lvl +" | " + usr +"** has been posted! Navigate to <https://www.handsoffateaoc.com/guild-member-participation/> and claim participation within **48 hours** when the event will close.";
+  var dkp = str.split("!")[1].split(" Participation")[0].slice(1);
 
+  document.getElementById("send").innerHTML = "Send:<br>" + "**Discord Participation | Level "+ lvl +" | " + usr +"** has been posted! Navigate to &#60;https://www.handsoffateaoc.com/guild-member-participation&#62; and claim participation within **48 hours** when the event will close.";
+
+  document.getElementById("event").innerHTML = "Event Name:<br>" + document.getElementById("send").innerHTML.split("**")[1];
+
+  document.getElementById("dkp").innerHTML = "<strike>DKP</strike> Participaion Points:<br>" + lvl + " * " + dkp + " = " + (Number(lvl)*Number(dkp));
 
 }
     </script>
