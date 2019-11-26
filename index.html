@@ -18,7 +18,7 @@
         Note: Make sure that the user has the "Hands of Fate" tag before awarding points. No action needs to be taken if they do not have this tag.<br>
         <br>
         1) Copy the message in #participation-logs and paste above.<br>
-        2) Go to <a href="https://www.handsoffateaoc.com/guild/">https://www.handsoffateaoc.com/guild/</a> and click "Create Event"<br>
+        2) Go to <a href="https://handsoffate.org/guild/" target="_blank">https://handsoffate.org/guild/</a> and click "Create Event"<br>
         3) Enter the event name as given bellow (eg: "Discord Participation | Level X | Username").<br>
         4) Select the proper Event Date and Event Time (todays date)<br>
         5) Select Discord Participation if not already selected under Event Type.<br>
@@ -44,7 +44,7 @@ function myFunction() {
   var lvl = str.split("!")[0].split("level ")[1];
   var dkp = str.split("!")[1].split(" Participation")[0].slice(1);
 
-  document.getElementById("send").innerHTML = "Send:<br>" + "**Discord Participation | Level "+ lvl +" | " + usr +"** has been posted! Navigate to &#60;https://www.handsoffateaoc.com/guild-member-participation&#62; and claim participation within **48 hours** when the event will close.";
+    document.getElementById("send").innerHTML = "Send:<br>" + "**Discord Participation | Level " + lvl + " | " + usr +"** has been posted! Navigate to &#60;https://handsoffate.org/guild-member-participation&#62; and claim participation within **48 hours** when the event will close.";
 
   document.getElementById("event").innerHTML = "Event Name:<br>" + document.getElementById("send").innerHTML.split("**")[1];
 
